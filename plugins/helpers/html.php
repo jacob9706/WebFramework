@@ -8,4 +8,14 @@ class Html_Helper
 		$subpage = urlencode($subpage);
 		return "<a href='index.php?page={$page}&subpage={$subpage}' {$extras}>{$text}</a>";
 	}
+	
+	public function page_path($page, $subpage)
+	{
+		return "index.php?page={$page}&subpage={$subpage}";
+	}
+	
+	public function content_path($path)
+	{
+		return 'app/content/' . $path;
+	}
 }

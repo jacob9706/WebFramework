@@ -6,7 +6,7 @@ class Error404
 {
 	public function __construct()
 	{
-		new View("core/error_templates/404.php", [], false, true);
+		new View("core/error_templates/404.php", array(), false, true);
 	}
 }
 

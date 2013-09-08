@@ -33,9 +33,17 @@ class Template
 
 			foreach ($matches[1] as $match)
 			{
-				$new_url = $this->format_url($match);
-				
-				$content = str_replace($match, $new_url, $content);
+				if (strpos($match, 'http') !== false)
+				{
+					$new_url = $this->format_url($match);
+					
+					$content = str_replace($match, $new_url, $content);
+				}
+				elseif (strpos($match, 'content') !== false)
+				{
+					$new_url = $this->format_link($match);
+					$content = str_replace($match, $new_url, $content);
+				}
 			}
 			
 			eval(' ?>' . $content . '<?php ');
@@ -49,5 +57,10 @@ class Template
 		$page = isset($e[0]) ? $e[0] : 'index';
 		$sub_page = isset($e[1]) ? $e[1] : 'index';
 		return '?page=' . urlencode($page) . '&subpage=' . urlencode($sub_page);
+	}
+	
+	private function format_link($info)
+	{
+		
 	}
 }
