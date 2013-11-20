@@ -19,6 +19,7 @@ class Base
 		}
 		
 		$this->plugins[$what] = new $class_name();
+		return $this->plugins[$what];
 	}
 }
 

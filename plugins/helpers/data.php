@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * A "#"" denotes a commented line. A ":" denotes a new section. Anything between 
+ * two ":" or a ":" and the end of the file is part of that one section.
+ */
 class Data_Helper
 {
 	public function __construct()
